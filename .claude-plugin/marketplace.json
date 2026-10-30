@@ -1,0 +1,30 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "schift-ocr",
+  "description": "Schift OCR plugin: remote MCP server and a skill for reading PDFs, scans and handwriting (Korean and English).",
+  "owner": {
+    "name": "Schift",
+    "email": "contact-us@room821.im",
+    "url": "https://schift.io"
+  },
+  "plugins": [
+    {
+      "name": "schift-ocr",
+      "source": "./",
+      "description": "Read PDFs, scans, photos, tables and handwriting (Korean and English) through Schift OCR. Remote MCP server + skill.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Schift"
+      },
+      "homepage": "https://schift.io/docs",
+      "category": "productivity",
+      "keywords": [
+        "ocr",
+        "pdf",
+        "korean",
+        "handwriting",
+        "mcp"
+      ]
+    }
+  ]
+}

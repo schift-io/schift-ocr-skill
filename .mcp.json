@@ -1,0 +1,9 @@
+{
+  "schift-ocr": {
+    "type": "http",
+    "url": "https://schift.io/mcp",
+    "headers": {
+      "Authorization": "Bearer ${SCHIFT_OCR_API_KEY}"
+    }
+  }
+}

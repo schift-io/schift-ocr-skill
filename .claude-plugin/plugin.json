@@ -1,0 +1,24 @@
+{
+  "name": "schift-ocr",
+  "version": "0.1.0",
+  "description": "Schift OCR for Claude Code: remote MCP server plus a skill that reads PDFs, scans, photos, tables, forms and handwriting (Korean and English) through Schift OCR before answering.",
+  "author": {
+    "name": "Schift",
+    "email": "contact-us@room821.im",
+    "url": "https://schift.io"
+  },
+  "homepage": "https://schift.io/docs",
+  "privacyPolicyUrl": "https://schift.io/privacy",
+  "repository": "https://github.com/schift-io/schift-ocr-skill",
+  "keywords": [
+    "ocr",
+    "pdf",
+    "korean",
+    "handwriting",
+    "table-extraction",
+    "mcp",
+    "문서인식",
+    "손글씨",
+    "표추출"
+  ]
+}
