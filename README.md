@@ -65,7 +65,7 @@ Cursor (`~/.cursor/mcp.json`) 등 `headers` 를 받는 클라이언트:
 }
 ```
 
-Cursor와 ChatGPT 연결은 아직 직접 확인하지 않았습니다. 이 서버는 API 키 헤더 인증만 지원하고 OAuth 로그인은 없습니다.
+이 서버는 API 키 헤더 인증만 지원하고 OAuth 로그인은 없습니다.
 
 ### 요금
 
@@ -138,7 +138,7 @@ Cursor (`~/.cursor/mcp.json`) and other clients that accept `headers`:
 }
 ```
 
-Cursor and ChatGPT have not been tested yet. The server supports API-key header auth only; there is no OAuth sign-in.
+The server supports API-key header auth only; there is no OAuth sign-in.
 
 ### Pricing
 
@@ -147,3 +147,7 @@ Shared (may be used for training) 10 KRW/page, 50 free pages a day. Private ZDR 
 ### Privacy
 
 Shared-mode pages and results may be used to train the model. ZDR mode is never used for training, and the result is deleted on the server after delivery. The skill uses ZDR for documents that look sensitive (IDs, contracts, medical records) and tells you when it does.
+
+## License
+
+MIT
