@@ -54,6 +54,7 @@ Call `list_tasks` if unsure; it is the source of truth for names and required op
 - 일반 모드 (`mode=share`): 10원/page, 50 free pages per day (KST). The page and result may be used to train the model. Results kept 24 h.
 - 비공개 (`mode=private`): 50원/page, needs paid credit. Never used for training. Results are kept encrypted until the user deletes them (console or `delete_result`), so they can be reopened.
 - 저장 안 함 (`mode=zdr`): 50원/page, needs paid credit. Never used for training, nothing kept: the result is delivered once and deleted. Not available for batch.
+- JSON tasks (`structured`, `layout`, `words`) cost more: +5원 in 일반 (15원), +10원 in 비공개/zdr (60원). Use `markdown` unless the user needs positions or block types.
 
 Default: omit `mode`, so the user's account setting applies (`get_usage` → `account_default_mode`).
 
@@ -62,7 +63,7 @@ When the document looks sensitive (ID cards, passports, resident registration nu
 ## Long documents and batch
 
 - A PDF over 20 pages is refused (`too_many_pages`). Split it into parts of at most 20 pages (and at most 10 MB each), for example `qpdf in.pdf --split-pages=20 part-%d.pdf` or pypdf, and send each part.
-- More than 20 pages in total: send every part with `batch=true`. Batch is 20% cheaper (standard 8원, private 40원/page; `mode=zdr` is refused for batch with `zdr_batch_unsupported`, use `mode=private`) and finishes within 48 h. It returns `job_id` and `deadline_at` at once.
+- More than 20 pages in total: send every part with `batch=true`. Batch is 20% cheaper (standard 8원, private 40원/page, JSON tasks 12원 / 48원; `mode=zdr` is refused for batch with `zdr_batch_unsupported`, use `mode=private`) and finishes within 48 h. It returns `job_id` and `deadline_at` at once.
 - Keep a list of `part -> job_id`. Tell the user the job ids and the deadline. Do not busy-wait for hours; check with `get_result` a few times, then report status and let the user come back. If the user needs the text now, send without `batch` and accept the full price.
 - Up to 20 pages: one normal call. A large PDF that may take over 300 s: `wait=false`, then poll.
 

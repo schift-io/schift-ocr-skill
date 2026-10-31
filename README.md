@@ -77,6 +77,7 @@ Claude 앱에서 스킬까지 쓰려면 `skills/schift-ocr/SKILL.md`를 스킬�
 | 일반 모드 | 10원 | 매일 50쪽 무료. 문서가 모델 학습에 쓰일 수 있습니다 |
 | 비공개 (`private`) | 50원 | 충전 크레딧 필요. 학습에 쓰지 않고, 결과는 암호화해 지울 때까지 보관합니다 |
 | 저장 안 함 (`zdr`) | 50원 | 충전 크레딧 필요. 학습에 쓰지 않고, 결과를 한 번 전달한 뒤 지웁니다. 배치 불가 |
+| JSON (`structured`·`layout`·`words`) | +5원 · 비공개/zdr +10원 | 위치가 붙어 출력이 Markdown의 약 2배 |
 | 배치 | 20% 할인 | 48시간 안에 처리 |
 
 자세히: [schift.io/pricing](https://schift.io/pricing/)
@@ -134,7 +135,7 @@ To use the skill in the Claude app, upload `skills/schift-ocr/SKILL.md` as a ski
 
 ### Pricing
 
-Standard mode 10 KRW/page with 50 free pages a day (pages may be used for training). Private 50 KRW/page with paid credit (never used for training; results kept encrypted until you delete them). `zdr` 50 KRW/page: nothing kept, the result is delivered once; not for batch. Batch is 20% off and finishes within 48 h. See [schift.io/pricing](https://schift.io/pricing/).
+Standard mode 10 KRW/page with 50 free pages a day (pages may be used for training). Private 50 KRW/page with paid credit (never used for training; results kept encrypted until you delete them). `zdr` 50 KRW/page: nothing kept, the result is delivered once; not for batch. JSON tasks (`structured`, `layout`, `words`) cost +5 KRW in standard mode and +10 KRW in private/zdr. Batch is 20% off and finishes within 48 h. See [schift.io/pricing](https://schift.io/pricing/).
 
 ### Troubleshooting
 
