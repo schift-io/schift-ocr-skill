@@ -12,7 +12,7 @@ PDF, 스캔본, 문서 사진, 표, 서식, 손글씨를 Schift OCR로 읽는 Cl
 | | |
 |---|---|
 | MCP 서버 | `https://schift.io/mcp` — 문서 읽기, 결과 조회, 사용량 확인 도구 |
-| 스킬 | 문서가 오면 먼저 Schift OCR로 읽고, 민감한 문서는 비공개(ZDR)로, 20쪽이 넘으면 배치로 보냅니다 |
+| 스킬 | 문서가 오면 먼저 Schift OCR로 읽고, 민감한 문서는 저장 안 함(zdr)·비공개로, 20쪽이 넘으면 배치로 보냅니다 |
 
 ### 빠른 시작
 
@@ -75,14 +75,15 @@ Claude 앱에서 스킬까지 쓰려면 `skills/schift-ocr/SKILL.md`를 스킬�
 | | 장당 | |
 |---|---|---|
 | 일반 모드 | 10원 | 매일 50쪽 무료. 문서가 모델 학습에 쓰일 수 있습니다 |
-| 비공개 · ZDR | 50원 | 충전 크레딧 필요. 학습에 쓰지 않고, 결과를 전달한 뒤 서버에서 지웁니다 |
+| 비공개 (`private`) | 50원 | 충전 크레딧 필요. 학습에 쓰지 않고, 결과는 암호화해 지울 때까지 보관합니다 |
+| 저장 안 함 (`zdr`) | 50원 | 충전 크레딧 필요. 학습에 쓰지 않고, 결과를 한 번 전달한 뒤 지웁니다. 배치 불가 |
 | 배치 | 20% 할인 | 48시간 안에 처리 |
 
 자세히: [schift.io/pricing](https://schift.io/pricing/)
 
 ### 개인정보
 
-스킬은 신분증, 계약서, 의료·금융 문서처럼 민감해 보이는 문서에 비공개(ZDR) 모드를 쓰고, 그렇게 했다고 한 줄로 알려 줍니다. 크레딧이 없어 비공개로 못 읽으면 일반 모드로 바꾸지 않고 먼저 묻습니다.
+스킬은 신분증, 계약서, 의료·금융 문서처럼 민감해 보이는 문서에 저장 안 함(`zdr`) 모드를 쓰고(배치는 비공개), 그렇게 했다고 한 줄로 알려 줍니다. 크레딧이 없어 비공개로 못 읽으면 일반 모드로 바꾸지 않고 먼저 묻습니다.
 
 ### 문제 해결
 
@@ -102,7 +103,7 @@ A Claude Code plugin that reads PDFs, scans, photos of documents, tables, forms 
 ### What you get
 
 - **MCP server** `https://schift.io/mcp`: read a document, fetch results, check usage.
-- **Skill**: when a document arrives, the agent reads it with Schift OCR first, uses private (ZDR) mode for sensitive documents, and batch mode beyond 20 pages.
+- **Skill**: when a document arrives, the agent reads it with Schift OCR first, uses `zdr` (nothing kept) for sensitive documents (`private` for batch), and batch mode beyond 20 pages.
 
 ### Quick start
 
@@ -133,7 +134,7 @@ To use the skill in the Claude app, upload `skills/schift-ocr/SKILL.md` as a ski
 
 ### Pricing
 
-Standard mode 10 KRW/page with 50 free pages a day (pages may be used for training). Private ZDR 50 KRW/page with paid credit (never used for training; the result is deleted after delivery). Batch is 20% off and finishes within 48 h. See [schift.io/pricing](https://schift.io/pricing/).
+Standard mode 10 KRW/page with 50 free pages a day (pages may be used for training). Private 50 KRW/page with paid credit (never used for training; results kept encrypted until you delete them). `zdr` 50 KRW/page: nothing kept, the result is delivered once; not for batch. Batch is 20% off and finishes within 48 h. See [schift.io/pricing](https://schift.io/pricing/).
 
 ### Troubleshooting
 
